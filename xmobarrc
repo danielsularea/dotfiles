@@ -1,0 +1,16 @@
+
+Config { font = "-terminus-*-*-*-*-10-*-*-*-*-*-*-*"
+       , bgColor = "#FDF6E3"
+       , fgColor = "#AC9510"
+       , position = Static { xpos = 1020, ypos = 0, width = 420, height = 20 }
+       , lowerOnStart = True
+       , commands = [ 
+                      Run Network "eth0" ["-L","0","-H","32","--normal","#389BFF","--high","#F46864"] 10
+                    , Run Cpu ["-L","3","-H","50","--normal","#00AE58","--high","#F46864"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%", "--normal","#00B0CC", "--high", "#F46864"] 10
+                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "<fc=#888888>%cpu%</fc> | %memory% | <fc=#888888>%eth0%</fc> | <fc=#69717A>%date%</fc> }{"
+       }

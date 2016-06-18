@@ -1,0 +1,5 @@
+# split pane vertically 20% at the bottom 
+selectp -t 0 
+splitw -v -p 20 
+
+
